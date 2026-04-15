@@ -29,4 +29,6 @@ jobs:
         run: cat .clasprc.json
           
       - name: Push to Apps Script
-        run: clasp push
+        run: clasp push --force
+        env:
+          CLASP_CONFIG: .clasprc.json
