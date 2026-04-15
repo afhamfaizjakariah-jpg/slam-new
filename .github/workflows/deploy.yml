@@ -23,7 +23,7 @@ jobs:
 
       - name: Authenticate
         run: |
-  echo '${{ secrets.CLASP_CREDENTIALS }}' > ~/.clasprc.json
+          echo '${{ secrets.CLASP_CREDENTIALS }}' > ~/.clasprc.json
 
       - name: Push to Apps Script
         run: clasp push
