@@ -24,11 +24,11 @@ jobs:
       - name: Authenticate
         run: |
           printf '%s' "${{ secrets.CLASP_CREDENTIALS }}" > .clasprc.json
-          
+
       - name: Check file
         run: cat .clasprc.json
-          
+
       - name: Push to Apps Script
-        run: clasp push --force
-        env:
-          CLASP_CONFIG: .clasprc.json
+        run: |
+          export CLASP_CONFIG_FILE=.clasprc.json
+          clasp push
